@@ -58,7 +58,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      #vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
      #vb.customize ["modifyvm", :id, "--accelerate2dvideo", "on"]
      #
-     vb.customize ["modifyvm", :id, "--audio", "dsound"]
+     #vb.customize ["modifyvm", :id, "--audio", "dsound"]
      #
      vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
   end
