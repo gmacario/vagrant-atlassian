@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Quick fix to enable vbguest on VirtualBox 4.3.10
+# See https://github.com/mitchellh/vagrant/issues/3341
+if [ ! -e /usr/lib/VBoxGuestAdditions ]; then
+    sudo ln -s /opt/VBoxGuestAdditions-4.3.10/lib/VBoxGuestAdditions \
+	/usr/lib/VBoxGuestAdditions || true
+fi
+
 sudo apt-get update
 
 # NOTE: If kernel is upgraded, you need to upgrade VirtualBox Guest Additions as well
