@@ -45,9 +45,10 @@ fi
 fi
 
 # Install Atlassian Confluence
-#sudo ~/Downloads/${CONFLUENCE_INSTALLFILE}
+sudo ${DOWNLOAD_DIR}/${CONFLUENCE_INSTALLFILE}
 
 # Install Atlassian JIRA
 #TODO
+#sudo ${DOWNLOAD_DIR}/${JIRA_INSTALLFILE}
 
 # END
