@@ -9,7 +9,8 @@ fi
 
 sudo apt-get update
 
-# NOTE: If kernel is upgraded, you need to upgrade VirtualBox Guest Additions as well
+# NOTE: If kernel is upgraded, you need to upgrade
+# VirtualBox Guest Additions as well
 #sudo apt-get dist-upgrade
 
 # Example: Install Apache
@@ -20,8 +21,8 @@ sudo apt-get update
 # Upgrading from Ubuntu server to desktop
 #
 # See http://askubuntu.com/questions/322122/switching-from-server-to-desktop
-sudo apt-get -y install ubuntu-desktop
-#
+#sudo apt-get -y install ubuntu-desktop
+
 # See http://askubuntu.com/questions/300799/does-ubuntu-12-04-lts-32-bit-have-graphic-user-interface
 #sudo apt-get -y install xubuntu-desktop
 
