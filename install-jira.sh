@@ -13,7 +13,7 @@ DOWNLOAD_DIR=`pwd`/tmp
 #DOWNLOAD_DIR=$/Downloads
 
 JIRA_INSTALLFILE="atlassian-jira-6.2.1-x64.bin"
-JIRA_BACKUP="2014-Apr-27--2230.zip"
+JIRA_BACKUP="2014-Apr-28--1031.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
@@ -32,7 +32,6 @@ fi
 fi
 
 # Install Atlassian JIRA
-#TODO
-#sudo ${DOWNLOAD_DIR}/${JIRA_INSTALLFILE}
+sudo ${DOWNLOAD_DIR}/${JIRA_INSTALLFILE}
 
 # END
