@@ -15,8 +15,8 @@ DOWNLOAD_DIR=`pwd`/tmp
 CONFLUENCE_INSTALLFILE="atlassian-confluence-5.4.4-x64.bin"
 JIRA_INSTALLFILE="atlassian-jira-6.2.1-x64.bin"
 
-CONFLUENCE_BACKUP="backup-2014_03_28.zip"
-JIRA_BACKUP="2014-Mar-28--0923.zip"
+CONFLUENCE_BACKUP="backup-2014_04_28.zip"
+JIRA_BACKUP="2014-Apr-27--2230.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
@@ -36,12 +36,12 @@ fi
 
 # Download maxlab.polito.it/confluence backup
 [ ! -z "${CONFLUENCE_BACKUP}" ] && if [ ! -e ${CONFLUENCE_BACKUP} ]; then
-    scp confluence@maxlab.polito.it:/var/atlassian/application-data/confluence/backups/${CONFLUENCE_BACKUP} .
+    scp gmacario@maxlab.polito.it:/var/atlassian/application-data/confluence/backups/${CONFLUENCE_BACKUP} .
 fi
 
 # Download maxlab.polito.it/jira backup
 [ ! -z "${JIRA_BACKUP}" ] && if [ ! -e ${JIRA_BACKUP} ]; then
-    scp jira@maxlab.polito.it:/var/atlassian/application-data/jira/export/${JIRA_BACKUP} .
+    scp gmacario@maxlab.polito.it:/var/atlassian/application-data/jira/export/${JIRA_BACKUP} .
 fi
 
 # Install Atlassian Confluence
