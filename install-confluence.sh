@@ -32,6 +32,13 @@ fi
 fi
 
 # Install Atlassian Confluence
-sudo ${DOWNLOAD_DIR}/${CONFLUENCE_INSTALLFILE}
+sudo ${DOWNLOAD_DIR}/${CONFLUENCE_INSTALLFILE} <<__END__
+o
+2
+/opt/atlassian/confluence
+/var/atlassian/application-data/confluence
+1
+y
+__END__
 
 # END
