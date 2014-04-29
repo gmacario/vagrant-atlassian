@@ -32,6 +32,13 @@ fi
 fi
 
 # Install Atlassian JIRA
-sudo ${DOWNLOAD_DIR}/${JIRA_INSTALLFILE}
+sudo ${DOWNLOAD_DIR}/${JIRA_INSTALLFILE} <<__END__
+o
+2
+/opt/atlassian/jira
+/var/atlassian/application-data/jira
+1
+y
+__END__
 
 # END
