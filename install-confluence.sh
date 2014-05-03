@@ -13,13 +13,13 @@ DOWNLOAD_DIR=`pwd`/tmp
 #DOWNLOAD_DIR=$/Downloads
 
 CONFLUENCE_INSTALLFILE="atlassian-confluence-5.5-x64.bin"
-CONFLUENCE_BACKUP="backup-2014_04_28.zip"
+CONFLUENCE_BACKUP="backup-2014_05_03.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
 
 # Install dependencies for Atlassian Confluence
-#TODO
+# (none identified so far)
 
 # Download Atlassian Confluence
 [ ! -z "${CONFLUENCE_INSTALLFILE}" ] && if [ ! -e ${CONFLUENCE_INSTALLFILE} ]; then
