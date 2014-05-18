@@ -4,7 +4,7 @@
 # Script to download and install Atlassian JIRA
 #
 # See also
-#	http://maxlab.polito.it/confluence/display/~gmacario/Configuration+of+mv-linux-powerhorse
+#	https://maxlab.polito.it/confluence/x/DAAb
 # ==================================================================================================
 
 set -x
@@ -12,8 +12,8 @@ set -x
 DOWNLOAD_DIR=`pwd`/tmp
 #DOWNLOAD_DIR=$/Downloads
 
-JIRA_INSTALLFILE="atlassian-jira-6.2.1-x64.bin"
-JIRA_BACKUP="2014-Apr-28--1031.zip"
+JIRA_INSTALLFILE="atlassian-jira-6.2.5-x64.bin"
+JIRA_BACKUP="2014-May-17--1540.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
