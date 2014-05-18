@@ -4,7 +4,7 @@
 # Script to download and install Atlassian Confluence
 #
 # See also
-#	http://maxlab.polito.it/confluence/display/~gmacario/Configuration+of+mv-linux-powerhorse
+#	https://maxlab.polito.it/confluence/x/DAAb
 # ==================================================================================================
 
 set -x
@@ -13,7 +13,7 @@ DOWNLOAD_DIR=`pwd`/tmp
 #DOWNLOAD_DIR=$/Downloads
 
 CONFLUENCE_INSTALLFILE="atlassian-confluence-5.5-x64.bin"
-CONFLUENCE_BACKUP="backup-2014_05_03.zip"
+CONFLUENCE_BACKUP="backup-2014_05_17.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
