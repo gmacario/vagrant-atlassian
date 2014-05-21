@@ -13,7 +13,7 @@ DOWNLOAD_DIR=`pwd`/tmp
 #DOWNLOAD_DIR=$/Downloads
 
 JIRA_INSTALLFILE="atlassian-jira-6.2.5-x64.bin"
-JIRA_BACKUP="2014-May-17--1540.zip"
+JIRA_BACKUP="2014-May-21--0347.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
