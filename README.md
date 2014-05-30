@@ -5,12 +5,17 @@ Vagrant project for testing the following [Atlassian](https://www.atlassian.com/
 * [Confluence](https://www.atlassian.com/software/confluence)
 * [JIRA](https://www.atlassian.com/get-jira)
 
-Copyright 2014, [Gianpaolo Macario](http://gmacario.github.io/)
+Copyright 2014, [Gianpaolo Macario](http://gmacario.github.io/).
 
 System Requirements
 -------------------
 
-* [Vagrant](http://www.vagrantup.com/) - tested with Vagrant 1.6.3
+* [Vagrant](http://www.vagrantup.com/) - tested with version 1.6.3
+* One virtualization solution - tested with [VirtualBox](https://www.virtualbox.org/) 1.3.10
+* One host OS supported by Vagrant - tested with [MS Windows 7 64-bit](http://windows.microsoft.com/)
+* At least 4 GB RAM
+* About 2 GB free disk space where the VM will run
+* A fast Internet connection
 
 Step-by-step instructions
 -------------------------
@@ -23,7 +28,7 @@ When the VM is up and running, login to the guest OS
 
     $ vagrant ssh
     
-Logged in as user `vagrant`, you may install each Atlassian product independently
+Logged in as user `vagrant`, you may install each Atlassian product independently.
 
 ### Install Confluence
 
