@@ -13,7 +13,7 @@ DOWNLOAD_DIR=`pwd`/tmp
 #DOWNLOAD_DIR=$/Downloads
 
 CONFLUENCE_INSTALLFILE="atlassian-confluence-5.5.3-x64.bin"
-CONFLUENCE_BACKUP="backup-2014_06_03.zip"
+CONFLUENCE_BACKUP="backup-2014_07_10.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
