@@ -24,6 +24,7 @@ cd ${DOWNLOAD_DIR}
 # Download Atlassian Confluence
 [ ! -z "${CONFLUENCE_INSTALLFILE}" ] && if [ ! -e ${CONFLUENCE_INSTALLFILE} ]; then
     wget http://www.atlassian.com/software/confluence/downloads/binary/${CONFLUENCE_INSTALLFILE}
+    chmod 755 ${CONFLUENCE_INSTALLFILE}
 fi
 
 # Download maxlab.polito.it/confluence backup
@@ -31,8 +32,13 @@ fi
     scp gmacario@maxlab.polito.it:/var/atlassian/application-data/confluence/backups/${CONFLUENCE_BACKUP} .
 fi
 
+if [ `whoami` != root ]; then
+    SUDO=sudo
+else
+    SUDO=""
+fi
 # Install Atlassian Confluence
-sudo ${DOWNLOAD_DIR}/${CONFLUENCE_INSTALLFILE} <<__END__
+${SUDO} ${DOWNLOAD_DIR}/${CONFLUENCE_INSTALLFILE} <<__END__
 o
 2
 /opt/atlassian/confluence
