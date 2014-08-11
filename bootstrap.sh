@@ -27,4 +27,7 @@ sudo apt-get update
 # Other things I will never live without...
 sudo apt-get -y install mc
 
+# Install packages required by install-{confluence,jira}.sh
+sudo apt-get -y install wget
+
 # === EOF ===
