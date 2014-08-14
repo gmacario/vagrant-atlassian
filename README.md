@@ -20,15 +20,29 @@ System Requirements
 Step-by-step instructions
 -------------------------
 
-Create the base VM with the following command:
+Choose which Vagrant provider you are going to use.
+
+In case the `--provider=docker` is selected later on, download the private SSH key to login to the phusion baseimage-docker:
+
+```
+curl \
+https://raw.githubusercontent.com/phusion/baseimage-docker/master/image/insecure_key \
+>phusion.key
+```
+
+Create the base VM with the following command
+
+    $ vagrant up --provider=docker
+
+If the Docker provider is not supported by your version of Vagrant you can omit the "--provider=docker" and use the default (Virtualbox) provider
 
     $ vagrant up
-    
+
 When the VM is up and running, login to the guest OS
 
     $ vagrant ssh
     
-Logged in as user `vagrant`, you may install each Atlassian product independently.
+Logged into the guest VM (as user `vagrant` with the default Virtualbox provider or as `root` if "vagrant up --provider=docker" was used), you may install each Atlassian product independently.
 
 ### Install Confluence
 

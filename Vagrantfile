@@ -9,13 +9,27 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
+  config.vm.provider "virtualbox" do |vb, override|
+    # Every Vagrant virtual environment requires a box to build off of.
+    override.vm.box = "trusty64"
+    # The url from where the 'config.vm.box' box will be fetched if it
+    # doesn't already exist on the user's system.
+    override.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  end
 
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu/trusty64"
-
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.define "atlassian" do |v|
+    v.vm.provider "docker" do |d|
+      d.cmd     = ["/sbin/my_init", "--enable-insecure-key"]
+      d.image   = "phusion/baseimage"
+      d.has_ssh = true
+    end
+    v.vm.provider "docker" do |d, override|
+      override.ssh.username = "root"
+      override.ssh.private_key_path = "phusion.key"
+    end
+    #v.vm.provision "shell", inline: "echo Hello"
+    #v.vm.synced_folder "./keys", "/vagrant"
+  end
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
