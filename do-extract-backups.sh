@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
+# =============================================================================
 # Project: vagrant-atlassian
+#
 # Purpose: Restore {Confluence, JIRA} backups
 #
 # The backups can be fetched from:
@@ -12,6 +14,7 @@
 # Although this script attempts to be as generic as possible,
 # there are a few hardcoded values to make it work on the tested use cases.
 # Please read and customize the script to fit your specific needs.
+# =============================================================================
 
 #set -x
 set -e
@@ -26,6 +29,8 @@ CONFLUENCE_BACKUP=backup-2014_07_30.zip
 JIRA_BKDIR=/var/atlassian/application-data/jira/export
 JIRA_BACKUP=2014-Aug-04--1041.zip
 
+DESTDIR=`pwd`/tmp
+
 # -------------
 # Sanity checks
 # -------------
@@ -35,7 +40,6 @@ if [ `whoami` != root ]; then
     exit 1
 fi
 
-DESTDIR=`pwd`/tmp
 mkdir -p "${DESTDIR}"
 
 [ ! -z "${CONFLUENCE_BACKUP}" ] && if [ -e "${DESTDIR}/${CONFLUENCE_BACKUP}" ]; then
@@ -44,6 +48,7 @@ fi
 [ ! -z "${JIRA_BACKUP}" ] && if [ -e "${DESTDIR}/${JIRA_BACKUP}" ]; then
     echo "WARNING: Will overwrite existing ${DESTDIR}/${JIRA_BACKUP}"
 fi
+
 
 # --------------------------------------------
 # OPTION 1: RESTORE FILES FROM A REMOTE SERVER
