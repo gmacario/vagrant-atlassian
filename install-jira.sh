@@ -7,7 +7,7 @@
 #	https://maxlab.polito.it/confluence/x/DAAb
 # ==================================================================================================
 
-set -x
+#set -x
 
 DOWNLOAD_DIR=`pwd`/tmp
 #DOWNLOAD_DIR=$/Downloads
