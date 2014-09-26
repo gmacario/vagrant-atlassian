@@ -19,7 +19,7 @@ mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
 
 # Install dependencies for Atlassian JIRA
-#TODO
+# (none identified so far)
 
 # Download Atlassian JIRA
 [ ! -z "${JIRA_INSTALLFILE}" ] && if [ ! -e ${JIRA_INSTALLFILE} ]; then
