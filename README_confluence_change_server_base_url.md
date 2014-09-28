@@ -3,6 +3,7 @@
 See https://docs.atlassian.com/confluence/docs-55/Configuring+the+Server+Base+URL for details.
 
 Confluence administration > General configuration
+
 http://localhost:8090/admin/viewgeneralconfig.action
 
 Example:
