@@ -7,19 +7,19 @@
 #	https://maxlab.polito.it/confluence/x/DAAb
 # ==================================================================================================
 
-set -x
+#set -x
 
 DOWNLOAD_DIR=`pwd`/tmp
 #DOWNLOAD_DIR=$/Downloads
 
-JIRA_INSTALLFILE="atlassian-jira-6.2.5-x64.bin"
+JIRA_INSTALLFILE="atlassian-jira-6.3.6-x64.bin"
 JIRA_BACKUP="2014-May-21--0347.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
 
 # Install dependencies for Atlassian JIRA
-#TODO
+# (none identified so far)
 
 # Download Atlassian JIRA
 [ ! -z "${JIRA_INSTALLFILE}" ] && if [ ! -e ${JIRA_INSTALLFILE} ]; then
