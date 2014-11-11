@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider "virtualbox" do |vb, override|
     # Every Vagrant virtual environment requires a box to build off of.
-    override.vm.box = "trusty64"
+    override.vm.box = "ubuntu/trusty64"
     # The url from where the 'config.vm.box' box will be fetched if it
     # doesn't already exist on the user's system.
     override.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
