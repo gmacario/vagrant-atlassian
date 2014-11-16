@@ -8,11 +8,11 @@
 
 #set -x
 
-DOWNLOAD_DIR=`pwd`/tmp
+DOWNLOAD_DIR="$PWD/tmp"
 #DOWNLOAD_DIR=$/Downloads
 
 CONFLUENCE_INSTALLFILE="atlassian-confluence-5.5.6-x64.bin"
-CONFLUENCE_BACKUP="backup-2014_07_10.zip"
+CONFLUENCE_BACKUP="backup-2014_07_30.zip"
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
@@ -31,6 +31,8 @@ fi
     echo "INFO: Downloading ${CONFLUENCE_BACKUP}"
     scp gmacario@maxlab.polito.it:/var/atlassian/application-data/confluence/backups/${CONFLUENCE_BACKUP} .
 fi
+
+cd -
 
 if [ `whoami` != root ]; then
     SUDO=sudo
