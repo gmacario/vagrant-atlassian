@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # ==================================================================================================
 # Script to download and install Atlassian JIRA
 #
@@ -7,32 +6,35 @@
 #	https://maxlab.polito.it/confluence/x/DAAb
 # ==================================================================================================
 
-#set -x
-
-DOWNLOAD_DIR=`pwd`/tmp
-#DOWNLOAD_DIR=$/Downloads
+DOWNLOAD_DIR="$PWD/tmp"
 
 JIRA_INSTALLFILE="atlassian-jira-6.3.6-x64.bin"
-JIRA_BACKUP="2014-May-21--0347.zip"
+JIRA_BACKUP="2014-Aug-04--1041.zip"
 
-mkdir -p ${DOWNLOAD_DIR}
-cd ${DOWNLOAD_DIR}
+set -e
+
+if [ `whoami` != root ]; then
+    SUDO=sudo
+else
+    SUDO=""
+fi
 
 # Install dependencies for Atlassian JIRA
 # (none identified so far)
 
-# Download Atlassian JIRA
+mkdir -p ${DOWNLOAD_DIR}
+cd ${DOWNLOAD_DIR}
+
 [ ! -z "${JIRA_INSTALLFILE}" ] && if [ ! -e ${JIRA_INSTALLFILE} ]; then
+    echo "INFO: Downloading ${JIRA_INSTALLFILE}"
     wget http://www.atlassian.com/software/jira/downloads/binary/${JIRA_INSTALLFILE}
+    chmod 755 ${JIRA_INSTALLFILE}
 fi
 
-# Download maxlab.polito.it/jira backup
-[ ! -z "${JIRA_BACKUP}" ] && if [ ! -e ${JIRA_BACKUP} ]; then
-    scp gmacario@maxlab.polito.it:/var/atlassian/application-data/jira/export/${JIRA_BACKUP} .
-fi
+cd -
 
-# Install Atlassian JIRA
-sudo ${DOWNLOAD_DIR}/${JIRA_INSTALLFILE} <<__END__
+echo "INFO: Installing ${JIRA_INSTALLFILE}"
+${SUDO} ${DOWNLOAD_DIR}/${JIRA_INSTALLFILE} <<__END__
 o
 2
 /opt/atlassian/jira
@@ -40,5 +42,12 @@ o
 1
 y
 __END__
+
+#if [ ! -z "${JIRA_BACKUP}" ]; then
+#    echo "INFO: Preparing restore of ${JIRA_BACKUP}..."
+#    ${SUDO} mkdir -p /var/atlassian/application-data/jira/restore
+#    ${SUDO} chown confluence /var/atlassian/application-data/jira/restore
+#    ${SUDO} cp ${DOWNLOAD_DIR}/${JIRA_BACKUP} /var/atlassian/application-data/jira/restore/
+#fi
 
 # END
