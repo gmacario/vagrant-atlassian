@@ -1,18 +1,24 @@
 #!/bin/bash
-# ==================================================================================================
+# =============================================================================
 # Script to download and install Atlassian Confluence
 #
 # See also
 #	https://maxlab.polito.it/confluence/x/DAAb
-# ==================================================================================================
-
-#set -x
+# =============================================================================
 
 DOWNLOAD_DIR="$PWD/tmp"
 #DOWNLOAD_DIR=$/Downloads
 
-CONFLUENCE_INSTALLFILE="atlassian-confluence-5.5.6-x64.bin"
+CONFLUENCE_INSTALLFILE="atlassian-confluence-5.6.4-x64.bin"
 CONFLUENCE_BACKUP="backup-2014_07_30.zip"
+
+set -e
+
+if [ `whoami` != root ]; then
+    SUDO=sudo
+else
+    SUDO=""
+fi
 
 mkdir -p ${DOWNLOAD_DIR}
 cd ${DOWNLOAD_DIR}
@@ -26,19 +32,7 @@ cd ${DOWNLOAD_DIR}
     chmod 755 ${CONFLUENCE_INSTALLFILE}
 fi
 
-# Download maxlab.polito.it/confluence backup
-[ ! -z "${CONFLUENCE_BACKUP}" ] && if [ ! -e ${CONFLUENCE_BACKUP} ]; then
-    echo "INFO: Downloading ${CONFLUENCE_BACKUP}"
-    scp gmacario@maxlab.polito.it:/var/atlassian/application-data/confluence/backups/${CONFLUENCE_BACKUP} .
-fi
-
 cd -
-
-if [ `whoami` != root ]; then
-    SUDO=sudo
-else
-    SUDO=""
-fi
 
 echo "INFO: Installing ${CONFLUENCE_INSTALLFILE}"
 ${SUDO} ${DOWNLOAD_DIR}/${CONFLUENCE_INSTALLFILE} <<__END__
