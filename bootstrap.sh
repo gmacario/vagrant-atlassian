@@ -28,6 +28,6 @@ sudo apt-get update
 sudo apt-get -y install mc
 
 # Install packages required by install-{confluence,jira}.sh
-sudo apt-get -y install wget
+sudo apt-get -y install gawk wget
 
 # === EOF ===
