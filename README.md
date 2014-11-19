@@ -67,3 +67,4 @@ Verify the parameters at the beginning of the script `install-jira.sh`, then lau
 You may verify that JIRA is up and running by browsing the following URL from the guest OS: 
 [http://localhost:8080/](http://localhost:8080/)
 
+<!-- EOF -->
