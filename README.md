@@ -1,5 +1,6 @@
 vagrant-atlassian
 =================
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/gmacario/vagrant-atlassian?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Vagrant project for testing the following [Atlassian](https://www.atlassian.com/) products:
 * [Confluence](https://www.atlassian.com/software/confluence)
