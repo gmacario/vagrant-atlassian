@@ -26,9 +26,8 @@ Choose which Vagrant provider you are going to use.
 In case the `--provider=docker` is selected later on, download the private SSH key to login to the phusion baseimage-docker:
 
 ```
-curl \
-https://raw.githubusercontent.com/phusion/baseimage-docker/master/image/insecure_key \
->phusion.key
+curl -o phusion.key \
+    https://raw.githubusercontent.com/phusion/baseimage-docker/master/image/insecure_key
 ```
 
 Create the base VM with the following command
