@@ -27,8 +27,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       override.ssh.username = "root"
       override.ssh.private_key_path = "phusion.key"
     end
-    #v.vm.provision "shell", inline: "echo Hello"
-    #v.vm.synced_folder "./keys", "/vagrant"
+    # v.vm.provision "shell", inline: "echo Hello"
+    # v.vm.synced_folder "./keys", "/vagrant"
   end
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -67,17 +67,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.vm.provider :virtualbox do |vb|
      # Leave it commented for headless mode
-     #vb.gui = true
+     # vb.gui = true
   
      # Use VBoxManage to customize the VM
      vb.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
      #
      vb.customize ["modifyvm", :id, "--memory", "2048"]
-     #vb.customize ["modifyvm", :id, "--vram", "16"]
-     #vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
-     #vb.customize ["modifyvm", :id, "--accelerate2dvideo", "on"]
+     # vb.customize ["modifyvm", :id, "--vram", "16"]
+     # vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+     # vb.customize ["modifyvm", :id, "--accelerate2dvideo", "on"]
      #
-     #vb.customize ["modifyvm", :id, "--audio", "dsound"]
+     # vb.customize ["modifyvm", :id, "--audio", "dsound"]
      #
      vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
   end
@@ -87,7 +87,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Run this command manually after XWindows is installed:
   # vagrant vbguest --do install
-  #config.vbguest.auto_update = false
+  # config.vbguest.auto_update = false
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
