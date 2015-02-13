@@ -1,15 +1,12 @@
 #!/bin/bash
 # =============================================================================
 # Script to download and install Atlassian Confluence
-#
-# See also
-#	https://maxlab.polito.it/confluence/x/DAAb
 # =============================================================================
 
 DOWNLOAD_DIR="$PWD/tmp"
 #DOWNLOAD_DIR=$/Downloads
 
-CONFLUENCE_INSTALLFILE="atlassian-confluence-5.6.4-x64.bin"
+CONFLUENCE_INSTALLFILE="atlassian-confluence-5.7-x64.bin"
 CONFLUENCE_BACKUP="backup-2014_07_30.zip"
 
 set -e
