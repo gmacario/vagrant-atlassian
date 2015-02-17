@@ -2,7 +2,6 @@ vagrant-atlassian
 =================
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/gmacario/vagrant-atlassian?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [![PullReview stats](https://www.pullreview.com/github/gmacario/vagrant-atlassian/badges/master.svg?)](https://www.pullreview.com/github/gmacario/vagrant-atlassian/reviews/master)
 
 Vagrant project for testing the following [Atlassian](https://www.atlassian.com/) products:
@@ -44,18 +43,18 @@ If the Docker provider is not supported by your version of Vagrant you can omit 
 When the VM is up and running, login to the guest OS
 
     $ vagrant ssh
-    
+
 Logged into the guest VM (as user `vagrant` with the default Virtualbox provider or as `root` if "vagrant up --provider=docker" was used), you may install each Atlassian product independently.
 
 ### Install Confluence
 
     $ cd /vagrant
-    
+
 Verify the parameters at the beginning of the script `install-confluence.sh`, then launch the installer script
 
     $ ./install-confluence.sh
-    
-You may verify that Confluence is up and running by browsing the following URL from the guest OS: 
+
+You may verify that Confluence is up and running by browsing the following URL from the guest OS:
 [http://localhost:8090/](http://localhost:8090/)
 
 ### Install JIRA
@@ -66,7 +65,7 @@ Verify the parameters at the beginning of the script `install-jira.sh`, then lau
 
     $ ./install-jira.sh
 
-You may verify that JIRA is up and running by browsing the following URL from the guest OS: 
+You may verify that JIRA is up and running by browsing the following URL from the guest OS:
 [http://localhost:8080/](http://localhost:8080/)
 
 <!-- EOF -->
