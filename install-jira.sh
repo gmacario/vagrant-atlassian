@@ -8,7 +8,7 @@
 
 DOWNLOAD_DIR="$PWD/tmp"
 
-JIRA_INSTALLFILE="atlassian-jira-6.3.10-x64.bin"
+JIRA_INSTALLFILE="atlassian-jira-6.3.15-x64.bin"
 JIRA_BACKUP="2014-Aug-04--1041.zip"
 
 set -e
