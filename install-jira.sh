@@ -43,11 +43,11 @@ o
 y
 __END__
 
-#if [ ! -z "${JIRA_BACKUP}" ]; then
-#    echo "INFO: Preparing restore of ${JIRA_BACKUP}..."
-#    ${SUDO} mkdir -p /var/atlassian/application-data/jira/restore
-#    ${SUDO} chown confluence /var/atlassian/application-data/jira/restore
-#    ${SUDO} cp ${DOWNLOAD_DIR}/${JIRA_BACKUP} /var/atlassian/application-data/jira/restore/
-#fi
+if [ ! -z "${JIRA_BACKUP}" ]; then
+    echo "INFO: Preparing restore of ${JIRA_BACKUP}..."
+    ${SUDO} mkdir -p /var/atlassian/application-data/jira/restore
+    ${SUDO} chown jira /var/atlassian/application-data/jira/restore
+    ${SUDO} cp ${DOWNLOAD_DIR}/${JIRA_BACKUP} /var/atlassian/application-data/jira/restore/
+fi
 
 # END
