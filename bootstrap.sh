@@ -30,4 +30,7 @@ sudo apt-get -y install mc
 # Install packages required by install-{confluence,jira}.sh
 sudo apt-get -y install gawk wget
 
+# Install tool to convert textfiles from and to DOS and Unix EOL formats
+sudo apt-get -y install dos2unix
+
 # === EOF ===
