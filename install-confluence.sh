@@ -41,6 +41,18 @@ o
 y
 __END__
 
+# Ensure that Confluence is automatically restarted even if running inside
+# Docker container gmacario/baseimage:0.9.15 (where `/sbin/my_init` runs as PID 1)
+echo "INFO: Installing /etc/service/confluence/run"
+cat >/tmp/run <<__END__
+#!/bin/sh
+set -e
+cd "/opt/atlassian/confluence/bin"
+exec ./start-confluence.sh -fg
+__END__
+${SUDO} install -m 755 -d /etc/service/confluence/
+${SUDO} install -m 755 /tmp/run /etc/service/confluence/
+
 if [ ! -z "${CONFLUENCE_BACKUP}" ]; then
     echo "INFO: Preparing restore of ${CONFLUENCE_BACKUP}..."
     ${SUDO} mkdir -p /var/atlassian/application-data/confluence/restore
