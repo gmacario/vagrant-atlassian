@@ -43,6 +43,18 @@ o
 y
 __END__
 
+# Ensure that JIRA is automatically restarted even if running inside
+# Docker container gmacario/baseimage:0.9.15 (where `/sbin/my_init` runs as PID 1)
+echo "INFO: Installing /etc/service/jira/run"
+cat >/tmp/run <<__END__
+#!/bin/sh
+set -e
+cd "/opt/atlassian/jira/bin"
+exec ./start-jira.sh -fg
+__END__
+${SUDO} install -m 755 -d /etc/service/jira/
+${SUDO} install -m 755 /tmp/run /etc/service/jira/
+
 if [ ! -z "${JIRA_BACKUP}" ]; then
     echo "INFO: Preparing restore of ${JIRA_BACKUP}..."
     ${SUDO} mkdir -p /var/atlassian/application-data/jira/restore
