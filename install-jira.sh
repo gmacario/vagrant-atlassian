@@ -57,9 +57,9 @@ ${SUDO} install -m 755 /tmp/run /etc/service/jira/
 
 if [ ! -z "${JIRA_BACKUP}" ]; then
     echo "INFO: Preparing restore of ${JIRA_BACKUP}..."
-    ${SUDO} mkdir -p /var/atlassian/application-data/jira/restore
-    ${SUDO} chown jira /var/atlassian/application-data/jira/restore
-    ${SUDO} cp ${DOWNLOAD_DIR}/${JIRA_BACKUP} /var/atlassian/application-data/jira/restore/
+    ${SUDO} mkdir -p /var/atlassian/application-data/jira/import
+    ${SUDO} chown jira /var/atlassian/application-data/jira/import
+    ${SUDO} cp ${DOWNLOAD_DIR}/${JIRA_BACKUP} /var/atlassian/application-data/jira/import/
 fi
 
 # END
